@@ -13,9 +13,9 @@ app = Flask(__name__)
 # Example dictionary to store conversation data
 conversation_data = []
 
-train_x = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+train_x = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-train_y = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+train_y = [0, 0, 0, 1, 0, 0, 0, 0, 0,0,0,0,0,0]
 
 net = tflearn.input_data(shape=[None, len(train_x)])
 net = tflearn.fully_connected(net, 8)
@@ -113,4 +113,4 @@ def chat():
             return jsonify({'error': 'Empty message or message not found'}), 400  # Return a 400 Bad Request status
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
