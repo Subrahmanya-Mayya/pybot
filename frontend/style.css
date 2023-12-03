@@ -11,6 +11,9 @@ body {
   background: #e3f2fd;
   position: relative;
 }
+p {
+  word-wrap: break-word;
+}
 .chatbot-toggler {
   position: fixed;
   bottom: 30px;
