@@ -1,47 +1,198 @@
-{"intents": [
-        {"tag": "greeting",
-         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
-         "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
-         "context_set": ""
-        },
-        {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye"],
-         "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
-        },
-        {"tag": "thanks",
-         "patterns": ["Thanks", "Thank you", "That's helpful"],
-         "responses": ["Happy to help!", "Any time!", "My pleasure"]
-        },
-        {"tag": "hours",
-         "patterns": ["What hours are you open?", "What are your hours?", "When are you open?" ],
-         "responses": ["We're open every day 9am-9pm", "Our hours are 9am-9pm every day"]
-        },
-        {"tag": "mopeds",
-         "patterns": ["Which mopeds do you have?", "What kinds of mopeds are there?", "What do you rent?" ],
-         "responses": ["We rent Yamaha, Piaggio and Vespa mopeds", "We have Piaggio, Vespa and Yamaha mopeds"]
-        },
-        {"tag": "payments",
-         "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?" ],
-         "responses": ["We accept VISA, Mastercard and AMEX", "We accept most major credit cards"]
-        },
-        {"tag": "opentoday",
-         "patterns": ["Are you open today?", "When do you open today?", "What are your hours today?"],
-         "responses": ["We're open every day from 9am-9pm", "Our hours are 9am-9pm every day"]
-        },
-
-        {"tag": "courses",
-         "patterns": ["are there any courses available for me?","list the courses","give me the list of courses","courses"],
-         "responses": ["available courses are python and golang","python and go lang"]
-        },
-        {"tag": "rental",
-         "patterns": ["Can we rent a moped?", "I'd like to rent a moped", "How does this work?" ],
-         "responses": ["Are you looking to rent today or later this week?"],
-         "context_set": "rentalday"
-        },
-        {"tag": "today",
-         "patterns": ["today"],
-         "responses": ["For rentals today please call 1-800-MYMOPED", "Same-day rentals please call 1-800-MYMOPED"],
-         "context_filter": "rentalday"
-        }
-   ]
+{
+        "intents": [
+                {
+                        "tag": "greeting",
+                        "patterns": [
+                                "Hi",
+                                "Is anyone there?",
+                                "Hello",
+                                "Good day",
+                                "Whats up"
+                        ],
+                        "responses": [
+                                "Hello!",
+                                "Good to see you again!",
+                                "Hi there, how can I help?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "goodbye",
+                        "patterns": [
+                                "cya",
+                                "See you later",
+                                "Goodbye",
+                                "I am Leaving",
+                                "Have a Good day"
+                        ],
+                        "responses": [
+                                "Sad to see you go :(. Type quit to stop chatting with me.",
+                                "Talk to you later. Type quit to stop chatting with me.",
+                                "Goodbye! Type quit to stop chatting with me."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "name",
+                        "patterns": [
+                                "what is your name",
+                                "what should I call you",
+                                "whats your name?"
+                        ],
+                        "responses": [
+                                "You can call me learnbot.",
+                                "I'm learnbot!"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "help",
+                        "patterns": [
+                                "Could you help me?",
+                                "give me a hand please",
+                                "Can you help?",
+                                "What can you do for me?",
+                                "I need a support",
+                                "I need a help",
+                                "support me please"
+                        ],
+                        "responses": [
+                                "Tell me how can I assist you",
+                                "Tell me your problem to assist you",
+                                "Yes Sure, How can I support you"
+                        ]
+                },
+                {
+                        "tag": "course",
+                        "patterns": [
+                                "which are the courses available?",
+                                "What courses do you have?",
+                                "what can i learn?",
+                                "course",
+                                "recommend a course"
+                        ],
+                        "responses": [
+                                "Sure, We have the following courses: 1.C programming, 2.Java, 3.Python, 4.ReactJS, 5.C++, 6.Golang, 7.Networking"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Java",
+                        "patterns": [
+                                "I want to take Java",
+                                "Java",
+                                "I need Java"
+                        ],
+                        "responses": [
+                                "Sure,That's a great choice.Here are the courses for Java Programming: 1.Introduction to Java, 2.Object Oriented programming in Java, 3.Advanced Java"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Java_Topic",
+                        "patterns": [
+                                "1.Introduction to Java",
+                                "Introduction to Java",
+                                "Introduction",
+                                "1"
+                        ],
+                        "responses": [
+                                "Here is the link to the course you have choosen : https://r.search.yahoo.com/_ylt=Awrx.1mMgmxlnKwJop67HAx.;_ylu=Y29sbwNzZzMEcG9zAzcEdnRpZAMEc2VjA3Ny/RV=2/RE=1701638924/RO=10/RU=https%3a%2f%2fwww.programiz.com%2fjava-programming/RK=2/RS=UtBaeu.hBm5LOSCHCyNmPYkL.TA-  You can also refer the video tutorial - https://in.video.search.yahoo.com/video/play;_ylt=AwrPoY0Ng2xlqxcY.ArmHAx.;_ylu=c2VjA3NyBHNsawN2aWQEZ3BvcwMx?p=java+course+object+oriented+programming&vid=f82528eeb354725b186457b96ff7b425&turl=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOVP.eOi7OFh9LG2Oa7waOzQqawHgFo%26pid%3DApi%26h%3D360%26w%3D480%26c%3D7%26rs%3D1&rurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D6T_HgnjoYwM&tit=%3Cb%3EJava%3C%2Fb%3E+OOPs+Concepts+in+120+minutes+%7C%3Cb%3EObject%3C%2Fb%3E+%3Cb%3EOriented%3C%2Fb%3E+%3Cb%3EProgramming%3C%2Fb%3E+%7C+%3Cb%3EJava%3C%2Fb%3E+Placement+%3Cb%3ECourse%3C%2Fb%3E+%7C+Simplilearn&c=0&sigr=Oxgreqqw6OMz&sigt=XIL09WRSNT4R&sigi=B2NLCLCmRlXI&fr=p%3As%2Cv%3Av&h=360&w=480&l=7151&age=1615876201&fr=mcafee&type=E211IN1316G0&tt=b"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Python",
+                        "patterns": [
+                                "I want to take Python",
+                                "Python",
+                                "I need Python"
+                        ],
+                        "responses": [
+                                "Sure,That's a great choice.Here are the courses for Python Programming: 1.Introduction to Python, 2.Object Oriented programming in Python, 3.Advanced Python"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Python_Topic",
+                        "patterns": [
+                                "1.Introduction to Python",
+                                "Introduction to Python"
+                        ],
+                        "responses": [
+                                "Here is the link to the course you have choosen : https://youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg&si=pVtNWCbRi9KT7NUG . You can also refer this : https://youtu.be/_uQrJ0TkZlc?si=ZtUklwQrj3tBnnld"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Golang",
+                        "patterns": [
+                                "I want to take Golang",
+                                "Golang",
+                                "I need Golang"
+                        ],
+                        "responses": [
+                                "Sure,That's a great choice.Here are the courses for Golang Programming: 1.Introduction to Golang, 2.Advanced course on Golang"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Golang_Topic",
+                        "patterns": [
+                                "1.Introduction to Golang",
+                                "Introduction to Golang"
+                        ],
+                        "responses": [
+                                "Here is the link to the course you have choosen : https://youtube.com/playlist?list=PLRAV69dS1uWQGDQoBYMZWKjzuhCaOnBpa&si=uCZV-4bwowOqkyrI . You can also refer this : https://youtube.com/playlist?list=PLRAV69dS1uWQGDQoBYMZWKjzuhCaOnBpa&si=uCZV-4bwowOqkyrI"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Golang",
+                        "patterns": [
+                                "I want to take Golang",
+                                "Golang",
+                                "I need Golang"
+                        ],
+                        "responses": [
+                                "Sure,That's a great choice.Here are the courses for Golang Programming: 1.Introduction to Golang, 2.Advanced course on Golang"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "CProgramming_Topic",
+                        "patterns": [
+                                "1.Introduction to C Programming",
+                                "Introduction to C Programming",
+                                "C Programming"
+                        ],
+                        "responses": [
+                                "Here is the link to the course you have choosen : https://in.video.search.yahoo.com/video/play;_ylt=AwrPoY2Lj2xlt5YVeDzmHAx.;_ylu=c2VjA3NyBHNsawN2aWQEZ3BvcwM0?p=c+programming+language+tutorial&vid=c5d220488029421271b60f32e735ce27&turl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOVP.SafRnNPdKCQs3ke-bTmgcAHgFo%26pid%3DApi%26h%3D360%26w%3D480%26c%3D7%26rs%3D1&rurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DirqbmMNs2Bo&tit=%3Cb%3EC%3C%2Fb%3E+%3Cb%3ELanguage%3C%2Fb%3E+%3Cb%3ETutorial%3C%2Fb%3E+for+Beginners+%28with+Notes+%26amp%3B+Practice+Questions%29&c=3&sigr=6Iv5ARrmKDf2&sigt=JdovlBl4hy2z&sigi=rfJQU4LetDS.&fr=p%3As%2Cv%3Av&h=360&w=480&l=37926&age=1646590601&fr=mcafee&type=E211IN1316G0&tt=b . You can also refer this : https://in.video.search.yahoo.com/video/play;_ylt=AwrPoY2Lj2xlt5YVfjzmHAx.;_ylu=c2VjA3NyBHNsawN2aWQEZ3BvcwM3?p=c+programming+language+tutorial&vid=303d52afe68b014586c631db7d2dfe3a&turl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOVP.mjcNeXiAbPoo43aFDbIdeQEsDh%26pid%3DApi%26h%3D225%26w%3D300%26c%3D7%26rs%3D1&rurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D0Sg6QHmlFJE&tit=%3Cb%3EC%3C%2Fb%3E+%3Cb%3EProgramming%3C%2Fb%3E+Full+Course+for+Beginners+-+Learn+%3Cb%3EC%3C%2Fb%3E+in+2022&c=6&sigr=1Tx3wezAcOH7&sigt=jXDQbOcbIuhx&sigi=1EejyAhQIzao&fr=p%3As%2Cv%3Av&h=225&w=300&l=17136&age=1663310460&fr=mcafee&type=E211IN1316G0&tt=b"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "thanks",
+                        "patterns": [
+                                "Thanks",
+                                "Thank you",
+                                "That's helpful"
+                        ],
+                        "responses": [
+                                "Happy to help!",
+                                "Any time!",
+                                "My pleasure"
+                        ]
+                },
+                {
+                        "tag": "quiz",
+                        "patterns": [
+                                "Can you give me a quiz",
+                                "I need a quiz"
+                        ],
+                        "responses": [
+                                "Sure, Here are some questions on Java : https://forms.gle/xVzCZcnZeM3YDgEb9 . Please click on this link. "
+                        ]
+                }
+        ]
 }
